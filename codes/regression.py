@@ -3,6 +3,10 @@
 # © 2024 Seho Jeong
 #########################################################
 
+# Import necessary packages
+import numpy as np
+from numpy.linalg import inv
+
 # Ordinary Least Squares (OLS)
 class OLS:
     def __init__(self, Y, X):
