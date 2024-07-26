@@ -26,9 +26,11 @@ Below is the list of topics covered (or to be upated) in each section.
 
 ### Codes
 
-- Least Squares
+- Least Squares (`01_least_squares.ipynb`)
 
 ### Empirics
+
+- CPS (`cps.ipynb`)
 
 ### Appendix
 
