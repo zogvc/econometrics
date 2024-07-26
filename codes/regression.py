@@ -11,10 +11,16 @@ from numpy.linalg import inv
 #     Ordinary Least Squares (OLS)     #
 # ------------------------------------ #
 class OLS:
-    def __init__(self, Y, X):
+    def __init__(self, Y, X, add_constant=True):
         self.Y = Y
-        self.X = X
+        self.X = self.addX
         self.n, self.k = X.shape
+
+    def add_constant(self):
+        """
+        Add a column of 1s
+        """
+        pass
 
     def coefficients(self):
         """
@@ -27,7 +33,7 @@ class OLS:
 
     def residuals(self):
         """
-        Compute the residuals e_hat = Y - Xβ_hat
+        Compute the residuals e_hat = Y - Xβ_ols
         """
         Y = self.Y
         X = self.X
@@ -53,7 +59,7 @@ class OLS:
 
     def r_squared(self, adjusted=False):
         """
-        Compute the (unadjusted) R-squared (coefficient of determination).
+        Compute the R-squared (coefficient of determination).
         """
         Y = self.Y
         X = self.X
@@ -106,6 +112,43 @@ class OLS:
         prediction_errors = res / (1-h)
 
         return np.max(h * prediction_errors)
+
+    def standard_errors(self, type='classic'):
+        """
+        Compute a vector of standard errors from the covariance estimate.
+        """
+        n = self.n
+        k = self.k
+        X = self.X
+        Qinv = inv(X.T @ X)
+        res = self.residuals()
+        h = self.leverage_values()
+
+        if type == 'classic':
+            u = (1 / (n-k)) * (res.T @ res)
+            V = Qinv * u
+            
+        elif type == 'HC0':
+            u = X * res.reshape(-1, 1)
+            V = Qinv @ (u.T @ u) @ Qinv
+            
+        elif type == 'HC1':
+            u = X * res.reshape(-1, 1)
+            V = (n / (n-k)) * (Qinv @ (u.T @ u) @ Qinv)
+
+        elif type == 'HC2':
+            u = X * (res / np.sqrt(1 - h)).reshape(-1, 1)
+            V = Qinv @ (u.T @ u) @ Qinv
+
+        elif type == 'HC3':
+            u = X * (res / (1 - h)).reshape(-1, 1)
+            V = Qinv @ (u.T @ u) @ Qinv
+
+        else:
+            print('Unsupported type of covariance estimate.')
+            V = None
+
+        return np.sqrt(np.diag(V))
 
 
 
