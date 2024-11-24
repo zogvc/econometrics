@@ -10,6 +10,8 @@ Others include Matlab and Stata.
 
 Datasets for empirical analysis can be downloaded at [https://users.ssc.wisc.edu/~bhansen/econometrics/](https://users.ssc.wisc.edu/~bhansen/econometrics/).
 
+All errors are my own.
+
 ## Contents
 
 This repository is mainly divided into three parts: `notes`, `codes`, and `appendix`.
