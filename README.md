@@ -1,8 +1,10 @@
 # Econometrics
 
+**⚠️ WORK IN PROGRESS ⚠️**
+
 Notes and codes on Econometric methods.
 
-Python will be the primary programming language I will use for the implementation.
+Python will be the primary programming language I will use for the model implementation.
 
 Others include Matlab and Stata.
 
@@ -10,11 +12,12 @@ Datasets for empirical analysis can be downloaded at [https://users.ssc.wisc.edu
 
 ## Contents
 
-This repository is mainly divided into three parts: `notes`, `codes`, `empirics` and `appendix`.
+This repository is mainly divided into three parts: `notes`, `codes`, and `appendix`.
 
-- `notes` include notes on various topics in econometric theory.
-- `codes` include programming codes that implement econometric methods.
-- `empirics` 
+- `notes` include lecture notes on various topics in econometric theory.
+- `codes` include programming codes that implement econometric methods **from scratch**.
+- `empirical-analysis` include data work
+- `stata` includes guides to basic syntax of Stata for beginners. (Tutorials on Python, Matlab, and Julia can be found at my `numerical-methods` repository.)
 - `appendix` is for the mathematical completeness of the notes. While we go through important features of mathematical tools in `notes`, for more detailed description you can refer to `appendix`. 
 
 Below is the list of topics covered (or to be upated) in each section.
