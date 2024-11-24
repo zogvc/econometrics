@@ -47,6 +47,6 @@ List of main references are listed below:
 
 - Bruce Hansen. 2022a. Econometrics. Princeton University Press.
 - Bruce Hansen. 2022b. Probability and Statistics for Economists. Princeton University Press.
-- Sungwon Lee. 2023. Lecture Slides on Advanced Econometrics I. ECOG030. Sogang University.
+- Sungwon Lee, Sungwon. 2023. Lecture Slides on Advanced Econometrics I. ECOG030. Sogang University.
 
 There are also many other references, which can be found at the first part of each file.
